@@ -5,12 +5,12 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.7.0</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	
 	<groupId>guru.springframework</groupId>
 	<artifactId>makki-pet-clinic</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	
 	<packaging>pom</packaging>    <!-- to be able to create a maven module -->
 	
@@ -49,7 +49,8 @@
 	
 	<scm>
 		<developerConnection>scm:git:https://github.com/ashrf34q/makki-pet-clinic.git</developerConnection>
-	</scm>
+	  <tag>makki-pet-clinic-0.0.1</tag>
+  </scm>
 
 	<modules>
 		<module>pet-clinic-data</module>
