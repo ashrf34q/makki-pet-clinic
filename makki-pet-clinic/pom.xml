@@ -10,7 +10,7 @@
 	
 	<groupId>guru.springframework</groupId>
 	<artifactId>makki-pet-clinic</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOT</version>
 	
 	<packaging>pom</packaging>    <!-- to be able to create a maven module -->
 	
@@ -50,7 +50,7 @@
 	
 	<scm>
 		<developerConnection>scm:git:https://github.com/ashrf34q/makki-pet-clinic.git</developerConnection>
-	  <tag>makki-pet-clinic-0.0.2</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 	<modules>
