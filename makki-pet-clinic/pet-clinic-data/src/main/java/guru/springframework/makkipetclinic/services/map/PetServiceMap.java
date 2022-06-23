@@ -2,10 +2,13 @@ package guru.springframework.makkipetclinic.services.map;
 
 import java.util.Set;
 
-import guru.springframework.makkipetclinic.model.Pet;
-import guru.springframework.makkipetclinic.services.CrudService;
+import org.springframework.stereotype.Service;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+import guru.springframework.makkipetclinic.model.Pet;
+import guru.springframework.makkipetclinic.services.PetService;
+
+@Service
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
 	@Override
 	public Pet save(Pet object) {
