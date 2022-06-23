@@ -3,9 +3,9 @@ package guru.springframework.makkipetclinic.services.map;
 import java.util.Set;
 
 import guru.springframework.makkipetclinic.model.Owner;
-import guru.springframework.makkipetclinic.services.CrudService;
+import guru.springframework.makkipetclinic.services.OwnerService;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override
 	public Owner save(Owner object) {
@@ -32,6 +32,8 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 		super.delete(object);
 	}
 
-	
-	
+	@Override
+	public Owner findByLastName(String lastName) {
+		return null;
+	}
 }
