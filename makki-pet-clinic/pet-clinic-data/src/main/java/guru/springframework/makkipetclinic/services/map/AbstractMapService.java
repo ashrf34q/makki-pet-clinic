@@ -7,7 +7,7 @@ import java.util.Set;
 
 //this abstract class will be used to implement CrudService interface methods.
 
-public abstract class AbstractMapService<T, ID>{	// An abstract class is a restricted class that annot be used to 
+public abstract class AbstractMapService<T, ID> {	// An abstract class is a restricted class that annot be used to 
 													//create objects(to access it it must be inherited from another class)
 	protected Map<ID,T> map = new HashMap<>();
 	
