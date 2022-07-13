@@ -8,23 +8,16 @@ import org.springframework.stereotype.Service;
 
 import guru.springframework.makkipetclinic.model.Owner;
 import guru.springframework.makkipetclinic.repositories.OwnerRepository;
-import guru.springframework.makkipetclinic.repositories.PetRepository;
-import guru.springframework.makkipetclinic.repositories.PetTypeRepository;
 import guru.springframework.makkipetclinic.services.OwnerService;
 
 @Service
 @Profile("springdatajpa")
 public class OwnerJPAService implements OwnerService{
 
-	private OwnerRepository ownerRepository;
-	private PetTypeRepository petTypeRepository;
-	private PetRepository petRepository;
+	private final OwnerRepository ownerRepository;
 	
-	public OwnerJPAService(OwnerRepository ownerRepository, PetTypeRepository petTypeRepository,
-			PetRepository petRepository) {
+	public OwnerJPAService(OwnerRepository ownerRepository) {
 		this.ownerRepository = ownerRepository;
-		this.petTypeRepository = petTypeRepository;
-		this.petRepository = petRepository;
 	}
 
 	@Override
