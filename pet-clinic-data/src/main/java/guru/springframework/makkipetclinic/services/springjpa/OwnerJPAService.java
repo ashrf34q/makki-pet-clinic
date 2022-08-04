@@ -1,6 +1,7 @@
 package guru.springframework.makkipetclinic.services.springjpa;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
@@ -54,5 +55,11 @@ public class OwnerJPAService implements OwnerService{
 	public Owner findByLastName(String lastName) {
 		return ownerRepository.findByLastName(lastName);
 	}//end findByLastName
+
+	@Override
+	public List<Owner> findAllByLastNameLike(String lastName) {
+		
+		return ownerRepository.findAllByLastNameLike(lastName);
+	}
 	
 }
