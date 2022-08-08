@@ -53,7 +53,8 @@ public class OwnerController {
 			owner.setLastName(""); //emppty string signifies broadest possible search
 		}
 		
-		List<Owner> results = ownerService.findAllByLastNameLike(owner.getLastName());
+		List<Owner> results = ownerService.findAllByLastNameLike("%" + owner.getLastName() + "%"); //Adding wildcards so now on the backend, SQL will 
+																								   //perform a LIKE operation with the last name
 		
 		if(results.isEmpty()) {
 			//Not found
