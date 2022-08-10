@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -67,7 +66,7 @@ public class PetController {
 			result.rejectValue("name", "duplicate", "already exists");
 		}
 		owner.getPets().add(pet);
-		
+		pet.setOwner(owner);	//trying something
 		if(result.hasErrors()) {
 			model.addAttribute("pet", pet);
 			return VIEWS_PETS_CREATE_OR_UPDATE;
@@ -87,6 +86,8 @@ public class PetController {
 	
 	@PostMapping("/pets/{petId}/edit")
 	public String processUpdateForm(@Validated Pet pet, BindingResult result, Owner owner, Model model) {
+		
+		
 		if(result.hasErrors()) {
 			pet.setOwner(owner);
 			model.addAttribute("pet", pet);
