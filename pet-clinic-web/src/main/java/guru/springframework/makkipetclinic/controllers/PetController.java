@@ -94,7 +94,9 @@ public class PetController {
 			return VIEWS_PETS_CREATE_OR_UPDATE;
 		}
 		else {
-			owner.getPets().add(pet);
+//			owner.getPets().add(pet); Adding the updated pet object back into the set of pets is causing a PersistentObjectException, that's
+			// because we're adding the same object into the same set (we're duplicating). We just have to set our pet owner as shown below
+			pet.setOwner(owner);
 			petService.save(pet);
 			return "redirect:/owners/" + owner.getId();
 		}
