@@ -12,7 +12,7 @@ import guru.springframework.makkipetclinic.model.BaseEntity;
 //this abstract class will be used to implement CrudService interface methods.
 
 public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {	// An abstract class is a restricted class that annot be used to 
-													//create objects(to access it it must be inherited from another class)
+													//create objects(to access it, it must be inherited from another class)
 	protected Map<Long,T> map = new HashMap<>();
 	
 	Set<T> findAll(){
