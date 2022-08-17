@@ -1,5 +1,7 @@
 package guru.springframework.makkipetclinic.controllers;
 
+import java.beans.PropertyEditorSupport;
+import java.time.LocalDate;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -33,6 +35,15 @@ public class VisitController {
 	@InitBinder
 	public void initBindOwner(WebDataBinder dataBinder) {
 		dataBinder.setDisallowedFields("id");
+		
+		dataBinder.registerCustomEditor(LocalDate.class, new PropertyEditorSupport() {
+		
+		@Override
+		public void setAsText(String text) throws IllegalArgumentException {
+			setValue(LocalDate.parse(text));
+		}
+	}); 	// Now our data binder will parse the string entered into LocalDate
+		
 	}
 	
 	
