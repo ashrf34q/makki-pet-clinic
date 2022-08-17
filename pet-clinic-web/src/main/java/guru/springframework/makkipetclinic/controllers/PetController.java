@@ -1,7 +1,5 @@
 package guru.springframework.makkipetclinic.controllers;
 
-import java.beans.PropertyEditorSupport;
-import java.time.LocalDate;
 import java.util.Collection;
 
 import org.springframework.stereotype.Controller;
