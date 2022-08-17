@@ -93,6 +93,18 @@ class OwnerControllerTest {
 		.andExpect(view().name("redirect:/owners/1"));
 		
 	}
+	
+	@Test
+	void processEmptyFindByLastName() throws Exception {
+		when(ownerService.findAllByLastNameLike(anyString())).thenReturn(owners.stream().collect(Collectors.toList()));
+		
+		mockMvc.perform(get("/owners")
+				.param("lastName", ""))
+		.andExpect(status().isOk())
+		.andExpect(view().name("owners/ownersList"))
+		.andExpect(model().attribute("selections", hasSize(2)));
+		
+	}
 		
 	@Test
 	void showOwnerstest() throws Exception {
